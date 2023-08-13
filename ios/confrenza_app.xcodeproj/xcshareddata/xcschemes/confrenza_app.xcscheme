@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "movie_app.app"
-               BlueprintName = "movie_app"
-               ReferencedContainer = "container:movie_app.xcodeproj">
+               BuildableName = "confrenza_app.app"
+               BlueprintName = "confrenza_app"
+               ReferencedContainer = "container:confrenza_app.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "movie_appTests.xctest"
-               BlueprintName = "movie_appTests"
-               ReferencedContainer = "container:movie_app.xcodeproj">
+               BuildableName = "confrenza_appTests.xctest"
+               BlueprintName = "confrenza_appTests"
+               ReferencedContainer = "container:confrenza_app.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "movie_app.app"
-            BlueprintName = "movie_app"
-            ReferencedContainer = "container:movie_app.xcodeproj">
+            BuildableName = "confrenza_app.app"
+            BlueprintName = "confrenza_app"
+            ReferencedContainer = "container:confrenza_app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "movie_app.app"
-            BlueprintName = "movie_app"
-            ReferencedContainer = "container:movie_app.xcodeproj">
+            BuildableName = "confrenza_app.app"
+            BlueprintName = "confrenza_app"
+            ReferencedContainer = "container:confrenza_app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

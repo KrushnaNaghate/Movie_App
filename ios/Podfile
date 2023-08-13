@@ -25,7 +25,7 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'movie_app' do
+target 'confrenza_app' do
   config = use_native_modules!
 
   # Flags change depending on the env values.
@@ -45,7 +45,7 @@ target 'movie_app' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'movie_appTests' do
+  target 'confrenza_appTests' do
     inherit! :complete
     # Pods for testing
   end

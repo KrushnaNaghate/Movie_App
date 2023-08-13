@@ -5,9 +5,11 @@ import {SliderBox} from 'react-native-image-slider-box';
 import {IMAGE_POSTER_URL} from '../config';
 import Constants from '../Constants';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
+import { useNavigation } from '@react-navigation/native';
 
 const {width,height} =Dimensions.get('window')
 const DiscoverMovies = props => {
+  const navigation = useNavigation()
   const [movies, setMovies] = useState([]);
   const [images, setImages] = useState([]);
   const [activeSlide, setactiveSlide] = useState(0);
@@ -34,7 +36,11 @@ const DiscoverMovies = props => {
   }, []);
 const _renderItem = ({item, index}) => {
   return (
-    <TouchableOpacity style={{marginVertical: 10, height: width / 2.3,width:'100%',alignSelf:'center',elevation:10,borderRadius:6}}>
+    <TouchableOpacity style={{marginVertical: 10, height: width / 2.3,width:'100%',alignSelf:'center',elevation:10,borderRadius:6}}
+    onPress={()=>{
+    navigation.navigate('MovieDetails', {movieId: item.id})
+    }}
+    >
       <ImageBackground
         source={{uri:`${IMAGE_POSTER_URL}${item.backdrop_path}`}}
         imageStyle={{height: '100%', width: '100%',borderRadius:6}}

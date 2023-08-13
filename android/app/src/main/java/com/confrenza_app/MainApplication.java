@@ -1,4 +1,4 @@
-package com.movie_app;
+package com.confrenza_app;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
