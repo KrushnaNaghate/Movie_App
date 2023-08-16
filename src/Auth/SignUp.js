@@ -67,12 +67,45 @@ const SignUp = ({handleIsLogin}) => {
       return;
     }
 
-    if (password !== confirmPassword) {
-      ToastAndroid.show('Passwords do not match', ToastAndroid.SHORT);
+    // Check for empty spaces in username and password
+    const usernameHasSpaces = /\s/.test(username);
+    const passwordHasSpaces = /\s/.test(password);
+
+    if (usernameHasSpaces || passwordHasSpaces) {
+      ToastAndroid.show(
+        'Username and password should not contain spaces',
+        ToastAndroid.SHORT,
+      );
       return;
     }
-    if (!validateEmail(email)) {
+
+    // Validate email format
+    if (!validateEmail(email.trim())) {
       ToastAndroid.show('Invalid email address', ToastAndroid.SHORT);
+      return;
+    }
+
+    // Check if mobile number is empty or just spaces
+    if (!phoneNumber.trim()) {
+      ToastAndroid.show('Mobile number is required', ToastAndroid.SHORT);
+      return;
+    }
+
+    // Validate mobile number using regex
+    const reg = /^[0]?[6789]\d{9}$/;
+    if (!reg.test(phoneNumber.trim())) {
+      ToastAndroid.show('Invalid mobile number', ToastAndroid.SHORT);
+      return;
+    }
+    if (username.trim().length < 5 || password.trim().length < 5) {
+      ToastAndroid.show(
+        'Username and password must have at least 5 characters',
+        ToastAndroid.SHORT,
+      );
+      return;
+    }
+    if (password.trim() !== confirmPassword.trim()) {
+      ToastAndroid.show('Passwords do not match', ToastAndroid.SHORT);
       return;
     }
 
@@ -80,7 +113,7 @@ const SignUp = ({handleIsLogin}) => {
 
     const newUser = {
       userName: username.trim(),
-      email:email.trim(),
+      email: email.trim(),
       pass: password.trim(),
       phone: phoneNumber.trim(),
       token,
@@ -190,7 +223,7 @@ const SignUp = ({handleIsLogin}) => {
               placeholder="Username"
               value={username}
               onChangeText={setUsername}
-              name="email"
+              name="username"
             />
             <Input
               placeholder="Email"
@@ -212,6 +245,7 @@ const SignUp = ({handleIsLogin}) => {
               value={phoneNumber}
               onChangeText={setPhoneNumber}
               keyboardType="numeric"
+              maxLength={10}
             />
             <View style={{position: 'relative', width: '100%'}}>
               <Input
@@ -219,6 +253,7 @@ const SignUp = ({handleIsLogin}) => {
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry={!showPass}
+                maxLength={10}
               />
               <TouchableOpacity
                 style={{
@@ -246,6 +281,7 @@ const SignUp = ({handleIsLogin}) => {
               style={{
                 marginBottom: 12,
               }}
+              maxLength={10}
             />
             <Button
               title={'SIGN Up'}

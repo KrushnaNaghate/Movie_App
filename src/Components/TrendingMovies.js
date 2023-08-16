@@ -12,7 +12,7 @@ const TrendingMovies = props => {
   useEffect(() => {
     const getMovies = async () => {
       const data = await GET(props.url);
-      console.log(data[0]);
+      console.log("data[0]",data[0]);
       setMovies(data.results);
       setLoading(false);
     };
@@ -43,7 +43,11 @@ const displayMovies = ({item}, props) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        props.navigation.navigate('MovieDetails', {movieId: item.id});
+        if (props.url.includes("similar")) {
+          props.navigation.push('MovieDetails', {movieId: item.id});
+        } else {
+          props.navigation.navigate('MovieDetails', {movieId: item.id});
+        }
       }}
       style={{marginHorizontal: 10,width:110}}>
       <Image

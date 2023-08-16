@@ -17,6 +17,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import Constants from './Constants';
 import Icon from 'react-native-vector-icons/Ionicons';
 import EIcon from 'react-native-vector-icons/Entypo';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 

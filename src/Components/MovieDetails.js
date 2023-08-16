@@ -19,6 +19,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import FIcon from 'react-native-vector-icons/Feather';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToFavorites, removeFromFavorites, addToWatchLater, removeFromWatchLater } from '../Redux/slices/MovieSlice';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const MovieDetails = props => {
   const [loading, setLoading] = useState(true);

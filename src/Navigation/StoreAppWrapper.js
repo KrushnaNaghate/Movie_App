@@ -72,7 +72,7 @@ const StoreAppWrapper = () => {
     </Stack.Navigator> 
     );
   };
-  const ifSignIn=()=>{
+  const IfSignIn=()=>{
     const userIsSignedIn = isLogin;
 
     const profile = () => (
@@ -203,7 +203,7 @@ const StoreAppWrapper = () => {
   const MainStack=()=>{
     return(
       <Stack.Navigator screenOptions={{headerShown:false}}>
-      <Stack.Screen name="Main" component={ifSignIn}  />
+      <Stack.Screen name="Main" component={IfSignIn}  />
       <Stack.Screen name="MovieDetails" component={MovieDetails} />
       <Stack.Screen name="ListScreen" component={ListScreen} />
   
